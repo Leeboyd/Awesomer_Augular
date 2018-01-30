@@ -1,10 +1,48 @@
-<h1>Widgets Ya'll</h1>
-<input type="text"
-  placeholder="Favorite color"
-  name="color"
-  [(ngModel)]="color">
-<!-- property binding -->
-<p [style.color]="color">{{ color }}</p>
-<!-- event binding -->
-<button type="button" mat-raised-button color="primary"
-  (click)="echo(color)">印個顏色</button>
+<div class="container">
+  <!-- WIDGETS LIST -->
+  <div class="col-50">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <h1>Widgets</h1>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>
+            <h3 mat-line>WIDGET NAME</h3>
+            <button mat-icon-button>
+              <mat-icon>close</mat-icon>
+            </button>
+            <p mat-line>
+              WIDGET DESCRIPTION
+            </p>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+
+  <!-- WIDGET DETAILS -->
+  <div class="col-50">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <h1>
+            Select a Widget
+          </h1>
+        </mat-card-title>
+      </mat-card-header>
+      <form>
+        <mat-card-content>
+          SELECTED WIDGET DETAILS
+        </mat-card-content>
+        <mat-card-actions>
+          <button type="submit" mat-button>Save</button>
+          <button type="button" mat-button>Cancel</button>
+        </mat-card-actions>
+      </form>
+    </mat-card>
+  </div>
+</div>

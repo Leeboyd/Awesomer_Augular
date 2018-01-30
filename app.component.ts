@@ -6,12 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Angular REST App';
+  title = ' MABOW REST App';
   links = [
-    { path: '/home', icon: 'home', label: 'Home'},
-    { path: '/items', icon: 'list', label: 'Items'},
-    { path: '/widgets', icon: 'view_quilt', label: 'Widgets'},
-    { path: '/profile', icon: 'face', label: 'Profile'}
+    { path: '/widgets', icon: 'view_quilt', label: 'Widgets'}
   ];
 
   constructor() {}
