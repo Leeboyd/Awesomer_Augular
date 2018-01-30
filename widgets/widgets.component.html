@@ -1,4 +1,10 @@
 <h1>Widgets Ya'll</h1>
+<input type="text"
+  placeholder="Favorite color"
+  name="color"
+  [(ngModel)]="color">
+<!-- property binding -->
 <p [style.color]="color">{{ color }}</p>
-<button type="button" md-button
+<!-- event binding -->
+<button type="button" mat-raised-button color="primary"
   (click)="echo(color)">印個顏色</button>
