@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./widgets.component.css']
 })
 export class WidgetsComponent implements OnInit {
+  selectedWidget;
   widgets = [
     {
       id: 1,
@@ -49,7 +50,7 @@ export class WidgetsComponent implements OnInit {
   ngOnInit() {
   }
 
-  echo(message) {
-    console.log(`COLOR: ${message}`)
+  selected (widget) {
+    this.selectedWidget = widget
   }
 }

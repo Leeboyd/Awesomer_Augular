@@ -9,13 +9,15 @@
       </mat-card-header>
       <mat-card-content>
         <mat-list>
-          <mat-list-item>
-            <h3 mat-line>WIDGET NAME</h3>
-            <button mat-icon-button>
+          <mat-list-item
+            *ngFor="let widget of widgets"
+            (click)="selected(widget)">
+            <h3 mat-line>{{ widget.name }}</h3>
+            <button mat-icon-button color="primary">
               <mat-icon>close</mat-icon>
             </button>
             <p mat-line>
-              WIDGET DESCRIPTION
+              {{ widget.description }}
             </p>
           </mat-list-item>
         </mat-list>
@@ -30,17 +32,19 @@
       <mat-card-header>
         <mat-card-title>
           <h1>
-            Select a Widget
+            <span *ngIf="selectedWidget; else prompt">Editing {{ selectedWidget.name }}</span>
+            <ng-template #prompt>Select a Widget</ng-template>
           </h1>
         </mat-card-title>
       </mat-card-header>
       <form>
         <mat-card-content>
-          SELECTED WIDGET DETAILS
+          <pre>{{ selectedWidget | json }}</pre>
         </mat-card-content>
         <mat-card-actions>
           <button type="submit" mat-button>Save</button>
-          <button type="button" mat-button>Cancel</button>
+          <button type="button" mat-raised-button color="warn"
+          (click)="selected(null)">Cancel</button>
         </mat-card-actions>
       </form>
     </mat-card>
