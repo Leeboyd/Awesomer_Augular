@@ -8,7 +8,7 @@ import { AppMaterialModule } from './app-material.module';
 
 // My Component
 import { AppComponent } from './app.component';
-import { WidgetsComponent } from './widgets/widgets.component'; 
+import { WidgetsComponent } from './Components/widgets/widgets.component'; 
 
  
 // Directive 

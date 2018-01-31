@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WidgetsService } from '../Services/widgets.services'
+import { WidgetsService } from '@app/Services/widgets.services'
 @Component({
   selector: 'app-widgets',
   templateUrl: './widgets.component.html',

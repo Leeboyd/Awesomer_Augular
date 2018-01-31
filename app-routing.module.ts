@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
 
-import { WidgetsComponent } from './widgets/widgets.component'; 
+import { WidgetsComponent } from './Components/widgets/widgets.component'; 
 
 const routes: Routes = [
+  {
+    path: '',
+    component: WidgetsComponent
+  },
   {
     path: 'widgets',
     component: WidgetsComponent
