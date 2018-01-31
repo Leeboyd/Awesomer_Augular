@@ -9,18 +9,22 @@ import { AppMaterialModule } from './app-material.module';
 // My Component
 import { AppComponent } from './app.component';
 import { WidgetsComponent } from './Components/widgets/widgets.component'; 
-
+import { ReviewsComponent } from './Components/reviews/reviews.component';
  
 // Directive 
 
  
 // Service 
 import { WidgetsService } from './Services/services';
+import { HomeComponent } from './Components/home/home.component';
+
 
 @NgModule({ 
   declarations: [ 
     AppComponent,
     WidgetsComponent,
+    ReviewsComponent,
+    HomeComponent,
   ], 
   imports: [ 
     BrowserModule,
