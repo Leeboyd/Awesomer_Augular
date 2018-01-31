@@ -15,7 +15,7 @@ import { WidgetsComponent } from './widgets/widgets.component';
 
  
 // Service 
-import { WidgetsService } from './Services/services';
+import {} from './Services/services';
 
 @NgModule({ 
   declarations: [ 
@@ -30,7 +30,7 @@ import { WidgetsService } from './Services/services';
     AppMaterialModule
   ], 
   providers: [
-    WidgetsService
+    // WidgetsService
   ], 
   bootstrap: [AppComponent] 
 }) 

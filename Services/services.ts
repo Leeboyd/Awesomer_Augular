@@ -1,1 +1,1 @@
-export { WidgetsService } from './widgets.services'
+export { WidgetsService } from '../widgets/widgets.services'
