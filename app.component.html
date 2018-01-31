@@ -1,24 +1,23 @@
 <mat-toolbar color="primary">
   <button (click)="sidenav.toggle()" mat-mini-fab><mat-icon>home</mat-icon></button>
-  <span>
-    {{title}}
-  </span>
+  <span class="example-fill-remaining-space"></span>
+  <span>{{title}}</span>
 </mat-toolbar>
-
+   
 <mat-sidenav-container>
   <mat-sidenav #sidenav mode="side">
     <nav>
       <a mat-button
-         class="nav-link"
-         *ngFor="let link of links"
-         [routerLink]="link.path"
-         routerLinkActive="active">
+          class="nav-link"
+          *ngFor="let link of links"
+          [routerLink]="link.path"
+          routerLinkActive="active">
         <mat-icon>{{link.icon}}</mat-icon>
         {{link.label}}
       </a>
     </nav>
   </mat-sidenav>
-
+  
   <div>
     <router-outlet></router-outlet>
   </div>

@@ -1,0 +1,1 @@
+export { WidgetsService } from './widgets.services'
