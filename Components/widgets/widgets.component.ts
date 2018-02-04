@@ -21,11 +21,15 @@ export class WidgetsComponent implements OnInit {
     this.selectedWidget = { id: null, name: '', description: ''}
   }
 
-  selected (widget) {
+  selectWidget (widget) {
     this.selectedWidget = widget
   }
 
-  save (widget) {
+  deleteWidget (widget) {
+    console.log(`刪除功能`)
+  }
+
+  saveWidget (widget) {
     console.log(`Successfully update: ${JSON.stringify(widget)}`) 
     this.reset() 
   }
