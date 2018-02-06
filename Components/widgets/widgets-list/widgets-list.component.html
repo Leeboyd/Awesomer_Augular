@@ -13,7 +13,7 @@
           <button 
             mat-icon-button color="primary"
             *ngIf="!readonly"
-            (click)="deleted.emit(widget)">
+            (click)="deleted.emit(widget);$event.stopImmediatePropagation();">
             <mat-icon>close</mat-icon>
           </button>
           <p mat-line>
