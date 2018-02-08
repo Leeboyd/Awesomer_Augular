@@ -16,7 +16,6 @@ import { WidgetsListComponent } from './Components/widgets/widgets-list/widgets-
 import { WidgetDetailsComponent } from './Components/widgets/widget-details/widget-details.component';
 
 import { ReviewsComponent } from './Components/reviews/reviews.component';
-import { ReviewingComponent } from './Modules/myform/Components/reviews/reviews.component'
 
 // Directive 
 
@@ -32,8 +31,7 @@ import { HomeComponent } from './Components/home/home.component';
     ReviewsComponent,
     HomeComponent,
     WidgetsListComponent,
-    WidgetDetailsComponent,
-    ReviewingComponent
+    WidgetDetailsComponent
   ], 
   imports: [
     // Ng
@@ -43,8 +41,7 @@ import { HomeComponent } from './Components/home/home.component';
     NoopAnimationsModule,
     AppMaterialModule,
     // 
-    MyformModule,
-    
+    MyformModule
   ], 
   providers: [
     WidgetsService
