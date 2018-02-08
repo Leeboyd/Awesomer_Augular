@@ -8,8 +8,6 @@ import { ReviewsComponent } from './Components/reviews/reviews.component';
 import { MyFormComponent } from './Modules/myform/myform.component'
 import { SimpleFormComponent } from './Modules/myform/Components/simple-form/simple-form.component';
 
-import { ReviewingComponent } from './Modules/myform/Components/reviews/reviews.component';
-
 const routes: Routes = [
   {
     path: '',
@@ -38,10 +36,6 @@ const routes: Routes = [
       {
         path: 'simple',
         component: SimpleFormComponent
-      },
-      {
-        path: 'review',
-        component: ReviewingComponent
       },
       {
         path: '**',

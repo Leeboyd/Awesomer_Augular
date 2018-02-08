@@ -4,18 +4,15 @@ import { CommonModule } from '@angular/common';
 
 import { MyFormComponent } from './myform.component'
 import { SimpleFormComponent } from './Components/simple-form/simple-form.component';
-// import { ReviewingComponent } from './Components/reviews/reviews.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    
     // MyFormRoutingModule
   ],
   declarations: [
     MyFormComponent,
-    SimpleFormComponent,
-    // ReviewingComponent
+    SimpleFormComponent
   ]
 })
 export class MyformModule {}
