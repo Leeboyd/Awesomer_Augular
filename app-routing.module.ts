@@ -5,9 +5,6 @@ import { HomeComponent } from './Components/home/home.component';
 import { WidgetsComponent } from './Components/widgets/widgets.component'; 
 import { ReviewsComponent } from './Components/reviews/reviews.component';
 
-import { MyFormComponent } from './Modules/myform/myform.component'
-import { SimpleFormComponent } from './Modules/myform/Components/simple-form/simple-form.component';
-
 const routes: Routes = [
   {
     path: '',
@@ -25,24 +22,9 @@ const routes: Routes = [
     path: 'reviews',
     component: ReviewsComponent
   },
-  // {
-  //   path: 'myform',
-  //   loadChildren: './Modules/myform/myform.module#MyformModule' 
-  // },
   {
     path: 'myform',
-    component: MyFormComponent,
-    children: [
-      {
-        path: 'simple',
-        component: SimpleFormComponent
-      },
-      {
-        path: '**',
-        redirectTo: 'simple',
-        pathMatch: 'full'
-      }
-    ]
+    loadChildren: './Modules/myform/myform.module#MyformModule' 
   },
   {
     path: '**',

@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppMaterialModule } from './app-material.module';
 
 // My Module
-import { MyformModule } from './Modules/myform/myform.module'
+// import { MyformModule } from './Modules/myform/myform.module'
 
 // My Component
 import { AppComponent } from './app.component';
@@ -39,9 +39,7 @@ import { HomeComponent } from './Components/home/home.component';
     FormsModule,
     AppRoutingModule,
     NoopAnimationsModule,
-    AppMaterialModule,
-    // 
-    MyformModule
+    AppMaterialModule
   ], 
   providers: [
     WidgetsService
