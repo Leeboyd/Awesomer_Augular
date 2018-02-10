@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
     { path: '/widgets', icon: 'view_quilt', label: 'Widgets'},
     { path: '/home', icon: 'home', label: 'Home'},
     { path: '/myform', icon: 'border_clear', label: 'SimpleForm'},
-    { path: '/lazy', icon: 'airline_seat_recline_normal', label: 'Lazy'},
+    { path: '/lazy/baby', icon: 'airline_seat_recline_normal', label: 'Lazy'},
     { path: '/reviews', icon: 'hotel', label: 'Review'}
   ];
 

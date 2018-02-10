@@ -28,7 +28,7 @@ const routes: Routes = [
   },
   {
     path: 'lazy',
-    loadChildren: './lazy.module#LazyModule'
+    loadChildren: './Modules/lazy/lazy.module#LazyModule'
   },
   {
     path: '**',

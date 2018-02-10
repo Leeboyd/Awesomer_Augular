@@ -19,11 +19,11 @@ const formRoutes: Routes = [
         path: 'simple',
         component: SimpleFormComponent
       },
-      // {
-      //   path: '**',
-      //   redirectTo: 'simple',
-      //   pathMatch: 'full'
-      // }
+      {
+        path: '**',
+        redirectTo: 'simple',
+        pathMatch: 'full'
+      }
     ]
   }
 ]
