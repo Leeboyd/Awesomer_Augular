@@ -27,6 +27,10 @@ const routes: Routes = [
     loadChildren: './Modules/myform/myform.module#MyformModule' 
   },
   {
+    path: 'lazy',
+    loadChildren: './lazy.module#LazyModule'
+  },
+  {
     path: '**',
     redirectTo: '',
     pathMatch: 'full'

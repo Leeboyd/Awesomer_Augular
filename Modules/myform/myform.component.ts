@@ -1,13 +1,12 @@
 import { Component } from '@angular/core'
 
 @Component({
-  selector: 'app-myform',
-  templateUrl: './myform.component.html'
+  template: `<router-outlet></router-outlet>`
 })
 
 export class MyFormComponent {
   constructor () {
-
+    console.log('hi, myform')
   }
 }
 

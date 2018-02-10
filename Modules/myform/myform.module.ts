@@ -5,6 +5,8 @@ import { MyFormRoutingModule } from './myform-routing.module';
 import { MyFormComponent } from './myform.component'
 import { SimpleFormComponent } from './Components/simple-form/simple-form.component';
 
+import { Routes, RouterModule } from '@angular/router'
+
 @NgModule({
   imports: [
     CommonModule,

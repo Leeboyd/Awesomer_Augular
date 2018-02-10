@@ -10,7 +10,9 @@ export class AppComponent implements OnInit {
   links = [
     { path: '/widgets', icon: 'view_quilt', label: 'Widgets'},
     { path: '/home', icon: 'home', label: 'Home'},
-    { path: 'reviews', icon: 'hotel', label: 'Review'}
+    { path: '/myform', icon: 'border_clear', label: 'SimpleForm'},
+    { path: '/lazy', icon: 'airline_seat_recline_normal', label: 'Lazy'},
+    { path: '/reviews', icon: 'hotel', label: 'Review'}
   ];
 
   constructor() {}
