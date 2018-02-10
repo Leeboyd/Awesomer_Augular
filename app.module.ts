@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { AppRoutingModule } from './app-routing.module'
-import { AppMaterialModule } from './app-material.module';
 
 // My Module
+import { AppRoutingModule } from './app-routing.module'
+// import { AppMaterialModule } from './app-material.module';
+import { SharedModule } from './Modules/shared.module'
 // import { MyformModule } from './Modules/myform/myform.module'
+
 
 // My Component
 import { AppComponent } from './app.component';
@@ -39,7 +41,8 @@ import { HomeComponent } from './Components/home/home.component';
     FormsModule,
     AppRoutingModule,
     NoopAnimationsModule,
-    AppMaterialModule
+    // AppMaterialModule,
+    SharedModule.forRoot()
   ], 
   providers: [
     WidgetsService
