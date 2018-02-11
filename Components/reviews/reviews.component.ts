@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reviews',
@@ -6,10 +7,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reviews.component.css']
 })
 export class ReviewsComponent implements OnInit {
-  title: string = 'MABOW is the heat!'
-  constructor() { }
+  title: string = 'Car model list!'
+  modelList: Array<object> = [{
+    "id": 1,
+    "model": "Pathfinder"
+  }, {
+    "id": 2,
+    "model": "Tucson"
+  }, {
+    "id": 3,
+    "model": "Galaxie"
+  }, {
+    "id": 4,
+    "model": "F430"
+  }, {
+    "id": 5,
+    "model": "A4"
+  }]
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  hardCodeRouting () {
+    this.router.navigate(['/car-details', 1]);
+  }
 }

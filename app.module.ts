@@ -18,6 +18,7 @@ import { WidgetsListComponent } from './Components/widgets/widgets-list/widgets-
 import { WidgetDetailsComponent } from './Components/widgets/widget-details/widget-details.component';
 
 import { ReviewsComponent } from './Components/reviews/reviews.component';
+import { ReviewsCarComponent } from './Components/reviews/reviews-car.component';
 
 // Directive 
 
@@ -31,6 +32,7 @@ import { HomeComponent } from './Components/home/home.component';
     AppComponent,
     WidgetsComponent,
     ReviewsComponent,
+    ReviewsCarComponent,
     HomeComponent,
     WidgetsListComponent,
     WidgetDetailsComponent

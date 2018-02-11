@@ -1,1 +1,4 @@
-<h1>{{ title }}</h1>
+<ul>
+  <li *ngFor="let car of modelList"><a [routerLink]="['/car-details', car.id]">{{ car.model }}</a></li>
+  <li (click)="hardCodeRouting();$event.stopImmediatePropagation();">Click to go</li>
+</ul>

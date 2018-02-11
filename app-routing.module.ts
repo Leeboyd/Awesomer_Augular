@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
 
-import { HomeComponent } from './Components/home/home.component';
-import { WidgetsComponent } from './Components/widgets/widgets.component'; 
-import { ReviewsComponent } from './Components/reviews/reviews.component';
+import { HomeComponent } from './Components/home/home.component'
+import { WidgetsComponent } from './Components/widgets/widgets.component'
+import { ReviewsComponent } from './Components/reviews/reviews.component'
+import { ReviewsCarComponent } from './Components/reviews/reviews-car.component'
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'reviews',
     component: ReviewsComponent
+  },
+  {
+    path: 'car-details/:id',
+    component: ReviewsCarComponent
   },
   {
     path: 'myform',
