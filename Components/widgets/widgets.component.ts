@@ -13,8 +13,13 @@ export class WidgetsComponent implements OnInit {
   constructor(private widgetsService: WidgetsService) { }
 
   ngOnInit() {
-    this.widgets = this.widgetsService.widgets
+    this.getWidgets()
     this.reset()
+  }
+
+  getWidgets () {
+    this.widgetsService.get_all()
+      .subscribe(widgets => this.widgets = widgets)
   }
 
   reset() {
@@ -25,12 +30,47 @@ export class WidgetsComponent implements OnInit {
     this.selectedWidget = widget
   }
 
-  deleteWidget (widget) {
-    console.log(`刪除功能`)
+  saveWidget (widget) {
+    if (!widget.id) {
+      this.execute(widget, 'create')
+    } else {
+      this.execute(widget, 'update')
+    }
   }
 
-  saveWidget (widget) {
-    console.log(`Successfully update: ${JSON.stringify(widget)}`) 
-    this.reset() 
+  execute (widget, action) {
+    this.widgetsService[action](widget)
+      .subscribe(result => {
+        this.getWidgets()
+        this.reset()
+        console.log(`Successfully ${action}: ${JSON.stringify(widget)}`) 
+      })
+  }
+
+  // createWidget (widget) {
+  //   this.widgetsService.create(widget)
+  //     .subscribe(result => {
+  //       this.getWidgets()
+  //       this.reset()
+  //       console.log(`Successfully create: ${JSON.stringify(widget)}`) 
+  //     })
+  // }
+
+  // updateWidget (widget) {
+  //   this.widgetsService.update(widget)
+  //     .subscribe(result => {
+  //       this.getWidgets()
+  //       this.reset()
+  //       console.log(`Successfully update: ${JSON.stringify(widget)}`) 
+  //     })
+  // }
+
+  deleteWidget (widget) {
+    this.widgetsService.delete_by(widget)
+      .subscribe(result => {
+        this.getWidgets()
+        this.reset()
+        console.log(`Successfully 刪除: ${JSON.stringify(widget)}`)
+      })
   }
 }

@@ -1,6 +1,7 @@
 // ng API
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http'
 import { FormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -43,6 +44,7 @@ import { HomeComponent } from './Components/home/home.component';
     FormsModule,
     AppRoutingModule,
     NoopAnimationsModule,
+    HttpModule,
     // AppMaterialModule,
     SharedModule.forRoot()
   ], 
