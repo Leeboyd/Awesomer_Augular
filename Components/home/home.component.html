@@ -1,5 +1,14 @@
 <div class="container">
   <div class="col-50">
+    <mat-input-container class="full-width">
+      <input type="text"
+        placeholder="Current Status"
+        [(ngModel)]="currentStatus"
+        matInput>
+    </mat-input-container>
+    <app-status 
+      [currentStatus]="currentStatus"
+      (logout)="logout()"></app-status>
     <app-widget-search (onResults)="handlerResult($event)"></app-widget-search>
     <app-widgets-list
       [widgets]="widgets" [readonly]="true"></app-widgets-list>

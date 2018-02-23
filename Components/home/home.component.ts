@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   widgets = []
+  currentStatus = 'active'
   constructor() { }
 
   ngOnInit() {
@@ -14,5 +15,9 @@ export class HomeComponent implements OnInit {
 
   handlerResult (widgets) {
     this.widgets = widgets
+  }
+
+  logout () {
+    this.currentStatus = 'LOG OUT'
   }
 }

@@ -22,12 +22,15 @@ import { WidgetSearchComponent } from './Components/widgets/widget-search/widget
 import { ReviewsComponent } from './Components/reviews/reviews.component';
 import { ReviewsCarComponent } from './Components/reviews/reviews-car.component';
 
+import { StatusComponent } from './Components/status/status.component';
+
 // Directive 
 
  
 // Service 
 import { WidgetsService } from './Services/services';
 import { HomeComponent } from './Components/home/home.component';
+
 
 @NgModule({ 
   declarations: [ 
@@ -38,7 +41,8 @@ import { HomeComponent } from './Components/home/home.component';
     HomeComponent,
     WidgetsListComponent,
     WidgetDetailsComponent,
-    WidgetSearchComponent
+    WidgetSearchComponent,
+    StatusComponent
   ], 
   imports: [
     // Ng
