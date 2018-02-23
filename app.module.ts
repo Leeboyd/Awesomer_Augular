@@ -17,6 +17,7 @@ import { AppComponent } from './app.component';
 import { WidgetsComponent } from './Components/widgets/widgets.component';
 import { WidgetsListComponent } from './Components/widgets/widgets-list/widgets-list.component';
 import { WidgetDetailsComponent } from './Components/widgets/widget-details/widget-details.component';
+import { WidgetSearchComponent } from './Components/widgets/widget-search/widget-search.component';
 
 import { ReviewsComponent } from './Components/reviews/reviews.component';
 import { ReviewsCarComponent } from './Components/reviews/reviews-car.component';
@@ -36,7 +37,8 @@ import { HomeComponent } from './Components/home/home.component';
     ReviewsCarComponent,
     HomeComponent,
     WidgetsListComponent,
-    WidgetDetailsComponent
+    WidgetDetailsComponent,
+    WidgetSearchComponent
   ], 
   imports: [
     // Ng

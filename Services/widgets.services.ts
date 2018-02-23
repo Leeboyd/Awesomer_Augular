@@ -1,6 +1,6 @@
-import { Http, Headers } from '@angular/http'
+import { Http, Headers, URLSearchParams } from '@angular/http'
 import { Injectable } from "@angular/core";
-import { Widget } from '@Components/widgets/widgets.interface'
+import { Widget } from '@app/Components/widgets/widgets.interface'
 
 import 'rxjs/add/operator/map'
 
@@ -36,6 +36,14 @@ export class WidgetsService {
 
   delete_by (widget: Widget) {
     return this.http.delete(`${BASE_URL}${widget.id}`)
+      .map(res => res.json())
+  }
+
+  search (query: string) {
+    let params: URLSearchParams = new URLSearchParams();
+    params.set('q', query);
+
+    return this.http.get(`${BASE_URL}`, { search: params })
       .map(res => res.json())
   }
 }

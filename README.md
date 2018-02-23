@@ -48,6 +48,7 @@ Angular-realworld-example-app: Medium clone built with Angular 5+ [1263 stars on
 ## layout
 * [Flex-layout (v.2.0)](https://github.com/angular/flex-layout?utm_source=mybridge&utm_medium=blog&utm_campaign=read_more)
 * Flex-layout (v.2.0): Provides HTML UI layout for Angular applications; using Flexbox and a Responsive API [2074 stars on Github]. Courtesy of Thomas 
+* [Using Sass with the Angular CLI](https://scotch.io/tutorials/using-sass-with-the-angular-cli#converting-a-current-app-to-sass)
 
 ## 疑難雜症
 * [問題彙整](https://hackmd.io/s/r1SqhB3Vz) 
