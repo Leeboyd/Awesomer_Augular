@@ -20,30 +20,34 @@ import { WidgetDetailsComponent } from './Components/widgets/widget-details/widg
 import { WidgetSearchComponent } from './Components/widgets/widget-search/widget-search.component';
 
 import { ReviewsComponent } from './Components/reviews/reviews.component';
-import { ReviewsCarComponent } from './Components/reviews/reviews-car.component';
+import { CarOverviewComponent } from './Components/reviews/car-overview/car-overview.component';
+import { CarSpecsComponent } from './Components/reviews/car-specs/car-spec.component';
+import { CarPartsComponent } from './Components/reviews/car-part/car-part.component';
 
 import { StatusComponent } from './Components/status/status.component';
 
-// Directive 
+// Directive
 
- 
-// Service 
+
+// Service
 import { WidgetsService } from './Services/services';
 import { HomeComponent } from './Components/home/home.component';
 
 
-@NgModule({ 
-  declarations: [ 
+@NgModule({
+  declarations: [
     AppComponent,
     WidgetsComponent,
     ReviewsComponent,
-    ReviewsCarComponent,
+    CarOverviewComponent,
+    CarSpecsComponent,
+    CarPartsComponent,
     HomeComponent,
     WidgetsListComponent,
     WidgetDetailsComponent,
     WidgetSearchComponent,
     StatusComponent
-  ], 
+  ],
   imports: [
     // Ng
     BrowserModule,
@@ -53,10 +57,10 @@ import { HomeComponent } from './Components/home/home.component';
     HttpModule,
     // AppMaterialModule,
     SharedModule.forRoot()
-  ], 
+  ],
   providers: [
     WidgetsService
-  ], 
-  bootstrap: [AppComponent] 
-}) 
-export class AppModule { } 
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

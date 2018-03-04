@@ -4,7 +4,10 @@ import { Routes, RouterModule } from '@angular/router'
 import { HomeComponent } from './Components/home/home.component'
 import { WidgetsComponent } from './Components/widgets/widgets.component'
 import { ReviewsComponent } from './Components/reviews/reviews.component'
-import { ReviewsCarComponent } from './Components/reviews/reviews-car.component'
+import { CarOverviewComponent } from './Components/reviews/car-overview/car-overview.component';
+import { CarSpecsComponent } from './Components/reviews/car-specs/car-spec.component';
+import { CarPartsComponent } from './Components/reviews/car-part/car-part.component';
+
 
 const routes: Routes = [
   {
@@ -24,8 +27,23 @@ const routes: Routes = [
     component: ReviewsComponent
   },
   {
-    path: 'car-details/:id',
-    component: ReviewsCarComponent
+    path: 'car-overview/:id',
+    component: CarOverviewComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'parts',
+        pathMatch: 'full'
+      },
+      {
+        path: 'parts',
+        component: CarPartsComponent
+      },
+      {
+        path: 'specs',
+        component: CarSpecsComponent
+      }
+    ]
   },
   {
     path: 'myform',

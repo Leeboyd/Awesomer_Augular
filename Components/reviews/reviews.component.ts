@@ -7,29 +7,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./reviews.component.css']
 })
 export class ReviewsComponent implements OnInit {
-  title: string = 'Car model list!'
+  title = 'Car model list!';
   modelList: Array<object> = [{
-    "id": 1,
-    "model": "Pathfinder"
+    'id': 1,
+    'model': 'Pathfinder'
   }, {
-    "id": 2,
-    "model": "Tucson"
+    'id': 2,
+    'model': 'Tucson'
   }, {
-    "id": 3,
-    "model": "Galaxie"
+    'id': 3,
+    'model': 'Galaxie'
   }, {
-    "id": 4,
-    "model": "F430"
+    'id': 4,
+    'model': 'F430'
   }, {
-    "id": 5,
-    "model": "A4"
-  }]
+    'id': 5,
+    'model': 'A4'
+  }];
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   hardCodeRouting () {
-    this.router.navigate(['/car-details', 1]);
+    this.router.navigate(['/car-overview', 1]);
   }
 }
