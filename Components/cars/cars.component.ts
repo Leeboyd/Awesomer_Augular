@@ -2,12 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-reviews',
-  templateUrl: './reviews.component.html',
-  styleUrls: ['./reviews.component.css']
+  selector: 'app-cars',
+  templateUrl: './cars.component.html'
 })
-export class ReviewsComponent implements OnInit {
-  title = 'Car model list!';
+export class CarsComponent implements OnInit {
   modelList: Array<object> = [{
     'id': 1,
     'model': 'Pathfinder'

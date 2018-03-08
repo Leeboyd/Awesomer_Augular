@@ -3,11 +3,15 @@ import { Routes, RouterModule } from '@angular/router'
 
 import { HomeComponent } from './Components/home/home.component'
 import { WidgetsComponent } from './Components/widgets/widgets.component'
-import { ReviewsComponent } from './Components/reviews/reviews.component'
-import { CarOverviewComponent } from './Components/reviews/car-overview/car-overview.component';
-import { CarSpecsComponent } from './Components/reviews/car-specs/car-spec.component';
-import { CarPartsComponent } from './Components/reviews/car-part/car-part.component';
+import { CarsComponent } from './Components/cars/cars.component';
+import { CarOverviewComponent } from './Components/cars/car-overview/car-overview.component';
+import { CarSpecsComponent } from './Components/cars/car-specs/car-spec.component';
+import { CarPartsComponent } from './Components/cars/car-part/car-part.component';
 
+import { CoursesComponent } from './Components/courses/courses.component';
+import { CoursesCardsComponent } from './Components/courses/courses-cards/courses-cards.component';
+import { CoursesMenuComponent } from './Components/courses/courses-menu/courses-menu.component';
+import { CoursesCategoryComponent } from './Components/courses/courses-category/courses-category.component';
 
 const routes: Routes = [
   {
@@ -23,8 +27,8 @@ const routes: Routes = [
     component: WidgetsComponent
   },
   {
-    path: 'reviews',
-    component: ReviewsComponent
+    path: 'cars',
+    component: CarsComponent
   },
   {
     path: 'car-overview/:id',
@@ -42,6 +46,30 @@ const routes: Routes = [
       {
         path: 'specs',
         component: CarSpecsComponent
+      }
+    ]
+  },
+  {
+    path: 'courses',
+    component: CoursesComponent,
+    children: [
+      {
+        path: '',
+        component: CoursesCardsComponent
+      },
+      {
+        path: ':section',
+        component: CoursesCategoryComponent
+      },
+      {
+        path: '',
+        outlet: 'sidemenu',
+        component: CoursesMenuComponent
+      },
+      {
+        path: ':section',
+        outlet: 'sidemenu',
+        component: CoursesMenuComponent
       }
     ]
   },

@@ -7,12 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = ' MABOW REST App';
+  generalLinks = [
+    { title: '課程', path: '/courses' }
+  ];
   links = [
     { path: '/widgets', icon: 'view_quilt', label: 'Widgets'},
     { path: '/home', icon: 'home', label: 'Home'},
     { path: '/myform', icon: 'border_clear', label: 'SimpleForm'},
     { path: '/lazy/baby', icon: 'airline_seat_recline_normal', label: 'Lazy'},
-    { path: '/reviews', icon: 'hotel', label: 'Review'}
+    { path: '/cars', icon: 'hotel', label: 'Car'}
   ];
 
   constructor() {}

@@ -19,12 +19,17 @@ import { WidgetsListComponent } from './Components/widgets/widgets-list/widgets-
 import { WidgetDetailsComponent } from './Components/widgets/widget-details/widget-details.component';
 import { WidgetSearchComponent } from './Components/widgets/widget-search/widget-search.component';
 
-import { ReviewsComponent } from './Components/reviews/reviews.component';
-import { CarOverviewComponent } from './Components/reviews/car-overview/car-overview.component';
-import { CarSpecsComponent } from './Components/reviews/car-specs/car-spec.component';
-import { CarPartsComponent } from './Components/reviews/car-part/car-part.component';
+import { CarsComponent } from './Components/cars/cars.component';
+import { CarOverviewComponent } from './Components/cars/car-overview/car-overview.component';
+import { CarSpecsComponent } from './Components/cars/car-specs/car-spec.component';
+import { CarPartsComponent } from './Components/cars/car-part/car-part.component';
 
 import { StatusComponent } from './Components/status/status.component';
+
+import { CoursesComponent } from './Components/courses/courses.component';
+import { CoursesCardsComponent } from './Components/courses/courses-cards/courses-cards.component';
+import { CoursesMenuComponent } from './Components/courses/courses-menu/courses-menu.component';
+import { CoursesCategoryComponent } from './Components/courses/courses-category/courses-category.component';
 
 // Directive
 
@@ -34,11 +39,12 @@ import { WidgetsService } from './Services/services';
 import { HomeComponent } from './Components/home/home.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     WidgetsComponent,
-    ReviewsComponent,
+    CarsComponent,
     CarOverviewComponent,
     CarSpecsComponent,
     CarPartsComponent,
@@ -46,7 +52,11 @@ import { HomeComponent } from './Components/home/home.component';
     WidgetsListComponent,
     WidgetDetailsComponent,
     WidgetSearchComponent,
-    StatusComponent
+    StatusComponent,
+    CoursesComponent,
+    CoursesCardsComponent,
+    CoursesMenuComponent,
+    CoursesCategoryComponent
   ],
   imports: [
     // Ng
