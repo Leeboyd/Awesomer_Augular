@@ -14,11 +14,49 @@ export class SimpleFormComponent implements OnInit {
   ngOnInit () {
     this.subscriber = this._formBuilder.group({
       name: ['', Validators.required],
-      email: ['', Validators.required]
+      password: [
+        '',
+        Validators.compose(
+          [
+            Validators.required,
+            Validators.minLength(5),
+            Validators.pattern('^[a-zA-Z]+$')
+          ])
+      ],
+      email: ['', Validators.compose([Validators.required, Validators.email])]
     });
   }
 
-  submitForm ({ value, valid }: { value: { name: string; email: string }, valid: boolean }) {
+  getPasswordErrorMessage(target) {
+    try {
+      if (target.hasError('required')) {
+        throw new Error('You must enter a value');
+      }
+      if (target.hasError('minlength')) {
+        throw new Error('min 5 Chars');
+      }
+      if (target.hasError('pattern')) {
+        throw new Error('Password must only be UpperCase, LowerCase and no Number.');
+      }
+    } catch (error) {
+      return error.message;
+    }
+  }
+
+  getEmailErrorMessage(target) {
+    try {
+      if (target.hasError('required')) {
+        throw new Error('You must enter a value');
+      }
+      if (target.hasError('email')) {
+        throw new Error('Not a valid email.');
+      }
+    } catch (error) {
+      return error.message;
+    }
+  }
+
+  submitForm ({ value, valid }: { value: { name: string; password: string }, valid: boolean }) {
     console.log(value, valid);
     this.reset();
   }
@@ -26,6 +64,7 @@ export class SimpleFormComponent implements OnInit {
   reset () {
     this.subscriber.reset({
       name: '',
+      password: '',
       email: ''
     });
   }

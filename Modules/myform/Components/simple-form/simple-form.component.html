@@ -1,14 +1,23 @@
 <form novalidate [formGroup]="subscriber" (submit)="submitForm(subscriber)">
   <mat-card-content>
     <mat-input-container class="full-width">
-      <input type="text" matInput placeholder="Name" formControlName="name">
+      <input type="text" matInput placeholder="Name" formControlName="name" required>
+      <mat-error *ngIf="subscriber.controls['name'].invalid">You must enter name</mat-error>
+      
     </mat-input-container>
     <mat-input-container class="full-width">
-      <input type="text" matInput placeholder="Email" formControlName="email">
+      <input type="password" matInput placeholder="Password" formControlName="password" required>
+      <mat-error *ngIf="subscriber.controls['password'].errors">{{ getPasswordErrorMessage(subscriber.controls['password']) }}</mat-error>
+
+    </mat-input-container>
+    <mat-input-container class="full-width">
+      <input type="text" matInput placeholder="Email" formControlName="email" required>
+      <mat-error *ngIf="subscriber.controls['email'].invalid">{{ getEmailErrorMessage(subscriber.controls['email']) }}</mat-error>
+
     </mat-input-container>
   </mat-card-content>
   <mat-card-actions>
     <button type="submit" mat-button [disabled]="!subscriber.valid">Subscribe!</button>
-    <button type="button" mat-button (click)="reset()">Cancel</button>
+    <button type="button" mat-button (click)="getErrorMessage()">Cancel</button>
   </mat-card-actions>
 </form>
