@@ -1,3 +1,14 @@
-<p>
-  simple-form works!
-</p>
+<form novalidate [formGroup]="subscriber" (submit)="submitForm(subscriber)">
+  <mat-card-content>
+    <mat-input-container class="full-width">
+      <input type="text" matInput placeholder="Name" formControlName="name">
+    </mat-input-container>
+    <mat-input-container class="full-width">
+      <input type="text" matInput placeholder="Email" formControlName="email">
+    </mat-input-container>
+  </mat-card-content>
+  <mat-card-actions>
+    <button type="submit" mat-button [disabled]="!subscriber.valid">Subscribe!</button>
+    <button type="button" mat-button (click)="reset()">Cancel</button>
+  </mat-card-actions>
+</form>

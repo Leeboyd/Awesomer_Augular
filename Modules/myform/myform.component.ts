@@ -1,7 +1,8 @@
-import { Component } from '@angular/core'
+import { Component, style } from '@angular/core'
 
 @Component({
-  template: `<router-outlet></router-outlet>`
+  templateUrl: './myform.component.html',
+  styleUrls: ['./myform.component.css']
 })
 
 export class MyFormComponent {

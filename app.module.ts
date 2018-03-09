@@ -2,14 +2,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http'
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 // My Module
 import { AppRoutingModule } from './app-routing.module'
 // import { AppMaterialModule } from './app-material.module';
 import { SharedModule } from './Modules/shared.module'
-// import { MyformModule } from './Modules/myform/myform.module'
 
 
 // My Component
