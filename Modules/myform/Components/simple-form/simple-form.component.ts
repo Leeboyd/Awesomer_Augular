@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 
+import { PasswordValidation } from '@app/Modules/passwordMatch.class'
+
 export class CustomErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const isSubmitted = form && form.submitted;
@@ -42,6 +44,8 @@ export class SimpleFormComponent implements OnInit {
           ])
       ],
       email: ['', Validators.compose([Validators.required, Validators.email])]
+    }, {
+      validator: PasswordValidation.MatchPassword
     });
   }
 
@@ -55,6 +59,9 @@ export class SimpleFormComponent implements OnInit {
       }
       if (target.hasError('minlength')) {
         throw new Error('min 5 Chars');
+      }
+      if (target.hasError('MatchPassword')) {
+        throw new Error('Password not Match');
       }
     } catch (error) {
       return error.message;
