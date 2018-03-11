@@ -3,13 +3,28 @@
     <mat-input-container class="full-width">
       <input type="text" matInput placeholder="Name" formControlName="name" required>
       <mat-error *ngIf="subscriber.controls['name'].invalid">You must enter name</mat-error>
-      
+
     </mat-input-container>
     <mat-input-container class="full-width">
-      <input type="password" matInput placeholder="Password" formControlName="password" required>
+      <input 
+        type="password" 
+        matInput 
+        placeholder="Password" 
+        formControlName="password" required>
       <mat-error *ngIf="subscriber.controls['password'].errors">{{ getPasswordErrorMessage(subscriber.controls['password']) }}</mat-error>
 
     </mat-input-container>
+    <mat-input-container class="full-width">
+      <input 
+        type="password" 
+        matInput 
+        placeholder="Verify Password"
+        [errorStateMatcher]="customErrorStateMatcher"
+        formControlName="password_verify" required>
+      <mat-hint>Errors appear instantly!</mat-hint>
+      <mat-error *ngIf="subscriber.controls['password_verify'].invalid">{{ getPasswordErrorMessage(subscriber.controls['password_verify']) }}</mat-error>
+    </mat-input-container>
+
     <mat-input-container class="full-width">
       <input type="text" matInput placeholder="Email" formControlName="email" required>
       <mat-error *ngIf="subscriber.controls['email'].invalid">{{ getEmailErrorMessage(subscriber.controls['email']) }}</mat-error>

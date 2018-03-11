@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroupDirective, NgForm, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material/core';
+
+export class CustomErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
 
 @Component({
   selector: 'app-simple-form',
@@ -8,6 +16,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class SimpleFormComponent implements OnInit {
   subscriber: FormGroup;
+  customErrorStateMatcher = new CustomErrorStateMatcher();
 
   constructor(private _formBuilder: FormBuilder) { }
 
@@ -15,6 +24,15 @@ export class SimpleFormComponent implements OnInit {
     this.subscriber = this._formBuilder.group({
       name: ['', Validators.required],
       password: [
+        '',
+        Validators.compose(
+          [
+            Validators.required,
+            Validators.minLength(5),
+            Validators.pattern('^[a-zA-Z]+$')
+          ])
+      ],
+      password_verify: [
         '',
         Validators.compose(
           [
@@ -32,11 +50,11 @@ export class SimpleFormComponent implements OnInit {
       if (target.hasError('required')) {
         throw new Error('You must enter a value');
       }
-      if (target.hasError('minlength')) {
-        throw new Error('min 5 Chars');
-      }
       if (target.hasError('pattern')) {
         throw new Error('Password must only be UpperCase, LowerCase and no Number.');
+      }
+      if (target.hasError('minlength')) {
+        throw new Error('min 5 Chars');
       }
     } catch (error) {
       return error.message;
@@ -65,6 +83,7 @@ export class SimpleFormComponent implements OnInit {
     this.subscriber.reset({
       name: '',
       password: '',
+      password_verify: '',
       email: ''
     });
   }
