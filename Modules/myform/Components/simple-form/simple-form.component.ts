@@ -19,6 +19,19 @@ export class CustomErrorStateMatcher implements ErrorStateMatcher {
 export class SimpleFormComponent implements OnInit {
   subscriber: FormGroup;
   customErrorStateMatcher = new CustomErrorStateMatcher();
+  channels: any[] = [
+    {
+      name: 'tvN',
+      description: 'Total Variety Network',
+      order: 1
+    },
+    {
+      name: 'BBC',
+      description: 'British Broadcasting Corporation',
+      order: 2
+    }
+
+  ];
 
   constructor(private _formBuilder: FormBuilder) { }
 
@@ -43,14 +56,15 @@ export class SimpleFormComponent implements OnInit {
             Validators.pattern('^[a-zA-Z]+$')
           ])
       ],
-      email: ['', Validators.compose([Validators.required, Validators.email])]
+      email: ['mabow@gmail.com', Validators.compose([Validators.required, Validators.email])],
+      channelControl: ['', [Validators.required]]
     }, {
       validator: PasswordValidation.MatchPassword
     });
     // this.onChanges();
   }
 
-  getPasswordErrorMessage(target) {
+  getPasswordErrorMessage (target) {
     try {
       if (target.hasError('required')) {
         throw new Error('You must enter a value');
@@ -69,7 +83,7 @@ export class SimpleFormComponent implements OnInit {
     }
   }
 
-  getEmailErrorMessage(target) {
+  getEmailErrorMessage (target) {
     try {
       if (target.hasError('required')) {
         throw new Error('You must enter a value');

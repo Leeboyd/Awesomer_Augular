@@ -30,6 +30,18 @@
       <mat-error *ngIf="subscriber.controls['email'].invalid">{{ getEmailErrorMessage(subscriber.controls['email']) }}</mat-error>
 
     </mat-input-container>
+
+    <mat-input-container>
+      <mat-select placeholder="選擇訂閱項目" formControlName="channelControl" required>
+        <mat-option>--</mat-option>
+        <mat-option *ngFor="let channel of channels" [value]="channel">
+          {{ channel.name }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="subscriber.controls['channelControl'].hasError('required')">Please choose a channel</mat-error>
+      <mat-hint>{{ subscriber.controls['channelControl'].value?.description }}</mat-hint>
+    </mat-input-container>
+
   </mat-card-content>
   <mat-card-actions>
     <button type="submit" mat-button [disabled]="!subscriber.valid">Subscribe!</button>
