@@ -7,7 +7,7 @@ import { Component, style } from '@angular/core'
 
 export class MyFormComponent {
   constructor () {
-    console.log('hi, myform')
+
   }
 }
 

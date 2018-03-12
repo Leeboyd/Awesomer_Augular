@@ -46,7 +46,7 @@
       <mat-hint>{{ subscriber.controls['channelControl'].value?.description }}</mat-hint>
     </mat-input-container>
 
-    <div *ngFor="let activity of activities; let i=index">
+    <div *ngFor="let activity of activities; let i = index">
       <label>
         <input 
           type="checkbox" 
@@ -55,6 +55,10 @@
         {{ activity.name }}
       </label>
     </div>
+
+    <mat-checkbox
+      *ngFor="let activity of activities; let i = index"
+      (change)="onCheckChange_dub($event.source.checked, activity.value)">{{ activity.name }}</mat-checkbox>
 
   </mat-card-content>
   <mat-card-actions>

@@ -3,6 +3,7 @@ import { FormControl, FormGroupDirective, NgForm, FormBuilder, FormGroup, FormAr
 import { ErrorStateMatcher } from '@angular/material/core';
 
 import { PasswordValidation } from '@app/Modules/passwordMatch.class'
+import { Activity } from './activity.interface';
 
 export class CustomErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -31,7 +32,7 @@ export class SimpleFormComponent implements OnInit {
       order: 2
     }
   ];
-  activities: Array<any> = [
+  activities: Array<Activity> = [
     {
       name: 'descr1',
       value: 'value1',
@@ -75,10 +76,16 @@ export class SimpleFormComponent implements OnInit {
       email: ['mabow@gmail.com', Validators.compose([Validators.required, Validators.email])],
       channelControl: ['', [Validators.required]],
       activityControl: new FormArray([]),
+      activityControl_dub: new FormArray([])
     }, {
       validator: PasswordValidation.MatchPassword
     });
     // this.onChanges();
+
+  }
+
+  initActivityControl () {
+    return this.activities.map((item: Activity) => this._formBuilder.group(item));
   }
 
   getPasswordErrorMessage (target) {
@@ -127,12 +134,21 @@ export class SimpleFormComponent implements OnInit {
     }
   }
 
+  onCheckChange_dub (isChecked, value) {
+    let activityControlArray_dub: FormArray = this.subscriber.get('activityControl_dub') as FormArray;
+    isChecked ?
+    activityControlArray_dub.push(new FormControl(value))
+    : activityControlArray_dub.controls = activityControlArray_dub.controls.filter((ctrl: FormControl) => {
+      return ctrl.value !== value;
+    });
+  }
+
   onChanges () {
-    this.subscriber.valueChanges.subscribe(value => {
+    this.subscriber.valueChanges.subscribe(form => {
       let formattedMsg =
       `
         Hello,
-        My name is ${value.name} and my email is ${value.email}.
+        My name is ${form.name} and my email is ${form.email}.
       `;
       console.log(formattedMsg)
     });
