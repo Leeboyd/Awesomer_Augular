@@ -47,6 +47,7 @@ export class SimpleFormComponent implements OnInit {
     }, {
       validator: PasswordValidation.MatchPassword
     });
+    // this.onChanges();
   }
 
   getPasswordErrorMessage(target) {
@@ -81,12 +82,23 @@ export class SimpleFormComponent implements OnInit {
     }
   }
 
-  submitForm ({ value, valid }: { value: { name: string; password: string }, valid: boolean }) {
-    console.log(value, valid);
-    this.reset();
+  onChanges () {
+    this.subscriber.valueChanges.subscribe(value => {
+      let formattedMsg =
+      `
+        Hello,
+        My name is ${value.name} and my email is ${value.email}.
+      `;
+      console.log(formattedMsg)
+    });
   }
 
-  reset () {
+  submitForm ({ value, valid }: { value: { name: string; password: string }, valid: boolean }) {
+    console.log(value, valid);
+    this.resetForm();
+  }
+
+  resetForm () {
     this.subscriber.reset({
       name: '',
       password: '',

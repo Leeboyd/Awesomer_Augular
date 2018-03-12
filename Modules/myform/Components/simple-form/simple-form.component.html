@@ -1,4 +1,4 @@
-<form novalidate [formGroup]="subscriber" (submit)="submitForm(subscriber)">
+<form [formGroup]="subscriber" (ngSubmit)="submitForm(subscriber)">
   <mat-card-content>
     <mat-input-container class="full-width">
       <input type="text" matInput placeholder="Name" formControlName="name" required>
@@ -33,6 +33,6 @@
   </mat-card-content>
   <mat-card-actions>
     <button type="submit" mat-button [disabled]="!subscriber.valid">Subscribe!</button>
-    <button type="button" mat-button (click)="getErrorMessage()">Cancel</button>
+    <button type="button" mat-button (click)="resetForm()">Cancel</button>
   </mat-card-actions>
 </form>
