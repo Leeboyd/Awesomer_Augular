@@ -10,7 +10,8 @@ import {
   MatListModule,
   MatDividerModule,
   MatFormFieldModule,
-  MatSelectModule
+  MatSelectModule,
+  MatCheckboxModule
 } from '@angular/material';
 
 @NgModule({
@@ -25,7 +26,8 @@ import {
     MatListModule,
     MatDividerModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCheckboxModule
   ]
 })
 export class AppMaterialModule {

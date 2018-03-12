@@ -1,5 +1,9 @@
 <form [formGroup]="subscriber" (ngSubmit)="submitForm(subscriber)">
   <mat-card-content>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Company (default)" disabled value="MABOW">
+    </mat-form-field>
+
     <mat-input-container class="full-width">
       <input type="text" matInput placeholder="Name" formControlName="name" required>
       <mat-error *ngIf="subscriber.controls['name'].invalid">You must enter name</mat-error>
@@ -41,6 +45,16 @@
       <mat-error *ngIf="subscriber.controls['channelControl'].hasError('required')">Please choose a channel</mat-error>
       <mat-hint>{{ subscriber.controls['channelControl'].value?.description }}</mat-hint>
     </mat-input-container>
+
+    <div *ngFor="let activity of activities; let i=index">
+      <label>
+        <input 
+          type="checkbox" 
+          [value]="activity.value" 
+          (change)="onCheckChange($event)">
+        {{ activity.name }}
+      </label>
+    </div>
 
   </mat-card-content>
   <mat-card-actions>
