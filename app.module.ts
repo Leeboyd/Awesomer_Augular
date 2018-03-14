@@ -32,6 +32,7 @@ import { CoursesCategoryComponent } from './Components/courses/courses-category/
 
 import { GridComponent } from './Components/grid/grid.component';
 import { GridFrComponent } from './Components/grid/grid-fr/grid-fr.component';
+import { GridLineComponent } from './Components/grid/grid-line/grid-line.component';
 
 // Directive
 
@@ -58,7 +59,8 @@ import { HomeComponent } from './Components/home/home.component';
     CoursesMenuComponent,
     CoursesCategoryComponent,
     GridComponent,
-    GridFrComponent
+    GridFrComponent,
+    GridLineComponent
   ],
   imports: [
     // Ng

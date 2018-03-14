@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-grid',
-  templateUrl: './grid.component.html'
+  selector: 'app-grid-line',
+  templateUrl: './grid-line.component.html',
+  styleUrls: ['./grid-line.component.css']
 })
-export class GridComponent implements OnInit {
+export class GridLineComponent implements OnInit {
   colors = ['Chocolate', 'Coral', 'CornflowerBlue', 'Cornsilk', 'Crimson', 'Cyan'];
   constructor() { }
 

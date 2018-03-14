@@ -1,13 +1,14 @@
+<h1>Grid Line</h1>
 <h2>grid-column-start, grid-column-end, grid-row-start, grid-row-end</h2>
 <h3>物件所佔的空間位置，Column 及 Row 所到的起始點及終點</h3>
-<div class="wrapper">
-  <div
-    *ngFor="let color of colors; let i = index"
-    [ngClass]="setMyClasses(i)"
-    [style.background]="color">{{ i }}</div>
-</div>
+<app-grid-line></app-grid-line>
 
+<h1>Grid track - 1</h1>
 <h2>fr</h2>
 <h3>這個地方在介紹兩個新東西，一個是 fr 這個單位，這個單位能夠將可用的 剩餘空間 做比例分割，以上面的 1fr 2fr 為例，空間將被分割成 1/3、2/3 兩個大小。
     另一個是 repeat，可以重複隔線。</h3>
 <app-grid-fr></app-grid-fr>
+
+<h1>Grid track - 2</h1>
+<h2>Tacking sizing and minmax()</h2>
+<h3>For example, I may want my rows to never collapse smaller than 100 pixels, but if my content stretches to 300 pixels in height I would like the row to stretch to that height.</h3>
