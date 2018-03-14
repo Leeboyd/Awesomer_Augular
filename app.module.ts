@@ -30,6 +30,7 @@ import { CoursesCardsComponent } from './Components/courses/courses-cards/course
 import { CoursesMenuComponent } from './Components/courses/courses-menu/courses-menu.component';
 import { CoursesCategoryComponent } from './Components/courses/courses-category/courses-category.component';
 
+import { GridComponent } from './Components/grid/grid.component';
 // Directive
 
 
@@ -55,7 +56,8 @@ import { HomeComponent } from './Components/home/home.component';
     CoursesComponent,
     CoursesCardsComponent,
     CoursesMenuComponent,
-    CoursesCategoryComponent
+    CoursesCategoryComponent,
+    GridComponent
   ],
   imports: [
     // Ng

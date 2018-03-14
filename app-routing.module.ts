@@ -13,6 +13,8 @@ import { CoursesCardsComponent } from './Components/courses/courses-cards/course
 import { CoursesMenuComponent } from './Components/courses/courses-menu/courses-menu.component';
 import { CoursesCategoryComponent } from './Components/courses/courses-category/courses-category.component';
 
+import { GridComponent } from './Components/grid/grid.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -21,6 +23,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'grid',
+    component: GridComponent
   },
   {
     path: 'widgets',

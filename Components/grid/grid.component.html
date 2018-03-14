@@ -1,0 +1,6 @@
+<div class="wrapper">
+  <div 
+    *ngFor="let color of colors; let i = index"
+    [ngClass]="setMyClasses(i)"
+    [style.background]="color">{{ i }}</div>
+</div>
