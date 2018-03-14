@@ -31,14 +31,14 @@ import { CoursesMenuComponent } from './Components/courses/courses-menu/courses-
 import { CoursesCategoryComponent } from './Components/courses/courses-category/courses-category.component';
 
 import { GridComponent } from './Components/grid/grid.component';
+import { GridFrComponent } from './Components/grid/grid-fr/grid-fr.component';
+
 // Directive
 
 
 // Service
 import { WidgetsService } from './Services/services';
 import { HomeComponent } from './Components/home/home.component';
-
-
 
 @NgModule({
   declarations: [
@@ -57,7 +57,8 @@ import { HomeComponent } from './Components/home/home.component';
     CoursesCardsComponent,
     CoursesMenuComponent,
     CoursesCategoryComponent,
-    GridComponent
+    GridComponent,
+    GridFrComponent
   ],
   imports: [
     // Ng
