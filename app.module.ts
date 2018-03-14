@@ -40,6 +40,7 @@ import { GridLineComponent } from './Components/grid/grid-line/grid-line.compone
 // Service
 import { WidgetsService } from './Services/services';
 import { HomeComponent } from './Components/home/home.component';
+import { GridMinmaxComponent } from './Components/grid/grid-minmax/grid-minmax.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { HomeComponent } from './Components/home/home.component';
     CoursesCategoryComponent,
     GridComponent,
     GridFrComponent,
-    GridLineComponent
+    GridLineComponent,
+    GridMinmaxComponent
   ],
   imports: [
     // Ng
